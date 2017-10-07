@@ -1,0 +1,37 @@
+DNS 是域名系统 (Domain Name System) 的缩写
+作用： 域名和IP地址做映射。
+
+http过程
+
+1 搜索Chorme浏览器DNS缓存
+查看方法： chrome://net-internals/#dns
+
+2 搜索操作系统DNS缓存
+查看方法： cmd  ->  ipconfig/displaydns
+清空方法：cmd -> ipconfig/flushdns
+
+3 读取本地的HOST文件
+查看方法： windows -> system32 -> drivers -> etc -> hosts
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+
+4 浏览器发起DNS系统调用，向本地主库DNS服务器（一般是运营商提供的） 发起的域名解析请求。
+查看本机DNS服务器：cmd -> ipconfig/all
+Internet选项中是可以指定固定的DNS服务器地址的 -> ipv4协议的属性界面
+
+
+5 宽带运营商服务器查看本身缓存：
+
+6 运营商发起迭代DNS解析请求 IP地址：
+过程： 根域 --> 顶级域(.com) --> 主域名(xxx.com) --> 拿到IP地址 --> 返回给系统内核同时缓存 --> 返回IP地址给浏览器
+
+7 TCP三次握手
+
+
+
+
+
+
+
+	
